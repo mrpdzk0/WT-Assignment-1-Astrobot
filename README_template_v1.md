@@ -25,10 +25,18 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| API Base URL | `_______________________________` |
-| Endpoint for current ISS location | `_______________________________` |
-| Sample response format (example JSON) |  
-```
+| API Base URL | `http://api.open-notify.org/iss-now.json` |
+| Endpoint for current ISS location | `{"timestamp": 1790251802, "iss_position": {"latitude": "-45.2251", "longitude": "-71.4836"}, "message": "success"}` |
+| Sample response format (example JSON) |
+
+'{
+  "timestamp": 1790251802,
+  "iss_position": {
+    "latitude": "-45.2251",
+    "longitude": "-71.4836"
+  },
+  "message": "success"
+}'
 
 ```
 |
@@ -76,13 +84,21 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| Library used | `_______________________________` |
+| Library used | `time` |
 | Function used to convert epoch | `_______________________________` |
 | Sample code to convert timestamp |  
+
+'import time
+
+epoch_time = 1613474400  # Replace with your epoch time
+
+formatted_time = time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(epoch_time))
+print(formatted_time)'
+
 ```  
 ```
 |
-| Output (human-readable time) | `_______________________________` |
+| Output (human-readable time) | `2021-02-16 11:20:00` |
 
 ---
 
