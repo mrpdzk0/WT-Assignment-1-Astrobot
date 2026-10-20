@@ -75,7 +75,7 @@ This investigation sheet helps you gather key technical information from the thr
 | Criteria | Details |
 |---------|---------|
 | API Provider (Choose one) |OpenWeatherMap - 5006dd63035cee6fdb48e0ea65892341££|
-| API Base URL | `_______________________________` |
+| API Base URL | `s://openweathermap.org/` |
 | Endpoint for current weather | `_______________________________` |
 | Authentication method | `appid={API key}` |
 | Required query parameters | `_______________________________` |
