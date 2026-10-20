@@ -47,7 +47,7 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| Provider used (Choose one) |OpenWeatherMap - 5006dd63035cee6fdb48e0ea65892341|
+| Provider used (Choose one) |OpenWeatherMap - |
 | API Base URL | `https://openweathermap.org/` |
 | Endpoint for geocoding | `_______________________________` |
 | Endpoint for reverse geocoding | `_______________________________` |
@@ -74,7 +74,7 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| API Provider (Choose one) |OpenWeatherMap - 5006dd63035cee6fdb48e0ea65892341££|
+| API Provider (Choose one) |OpenWeatherMap - |
 | API Base URL | `s://openweathermap.org/` |
 | Endpoint for current weather | `_______________________________` |
 | Authentication method | `appid={API key}` |
