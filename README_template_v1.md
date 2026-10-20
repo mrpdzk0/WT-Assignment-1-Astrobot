@@ -47,14 +47,21 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| Provider used (Choose one) | **LocationIQ / Mapbox/ OpenWeatherMap other -provide detail** |
-| API Base URL | `_______________________________` |
+| Provider used (Choose one) |OpenWeatherMap - 5006dd63035cee6fdb48e0ea65892341|
+| API Base URL | `https://openweathermap.org/` |
 | Endpoint for geocoding | `_______________________________` |
 | Endpoint for reverse geocoding | `_______________________________` |
-| Authentication method | `_______________________________` |
+| Authentication method | `appid={API key}` |
 | Required query parameters | `_______________________________` |
 | Sample request with latitude/longitude | `_______________________________` |
 | Sample JSON response (formatted example) |  
+{
+  "lat": 51.5,
+  "lon": -0.1,
+  "timezone": "Europe/London",
+  "timezone_offset": 3600,
+  "data": [
+    {
 ```
 
 ```
@@ -67,12 +74,48 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| API Provider (Choose one) | **OpenWeather, OpenWeatherMap (or other – provide details)** |
+| API Provider (Choose one) |OpenWeatherMap - 5006dd63035cee6fdb48e0ea65892341££|
 | API Base URL | `_______________________________` |
 | Endpoint for current weather | `_______________________________` |
-| Authentication method | `_______________________________` |
+| Authentication method | `appid={API key}` |
 | Required query parameters | `_______________________________` |
 | Sample JSON response (formatted example) |  
+{
+  "lat": 51.5,
+  "lon": -0.1,
+  "timezone": "Europe/London",
+  "timezone_offset": 3600,
+  "data": [
+    {
+      "dt": 1777449371,
+      "sunrise": 1777437375,
+      "sunset": 1777490344,
+      "temp": 286.42,
+      "feels_like": 285.32,
+      "pressure": 1024,
+      "humidity": 58,
+      "dew_point": 278.34,
+      "uvi": 1.55,
+      "clouds": 0,
+      "visibility": 10000,
+      "wind_speed": 8.23,
+      "wind_deg": 70,
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "sky is clear",
+          "icon": "01d"
+        }
+      ]
+	  "alerts": [
+		"8B46C632-DCA7-44D7-8BDF-02445621BAFF",
+		"29F58A35-BB91-4A73-9F46-9FC64BDF604F",
+		...
+	]
+    }
+  ]
+}
 ```
 
 ```
