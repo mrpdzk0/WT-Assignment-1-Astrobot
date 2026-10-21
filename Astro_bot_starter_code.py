@@ -108,9 +108,13 @@ def send_message(token, room_id, message):
 # WEATHER FUNCTIONS
 # =========================
 def get_city_coordinates(city, api_key):
-    url = #complete the URL to fetch city coordinates from OpenWeatherMap API
-    params = #complete the params dictionary to include the city name, limit, and the API key
-    response = requests.#complete(url, params=params)
+    url = "https://api.openweathermap.org/geo/1.0/direct"
+    params = {
+        "q": city,
+        "limit": 1,
+        "appid": api_key
+    }
+    response = requests.get(url, params=params)
 
     if response.status_code != 200:
         return None
@@ -123,8 +127,7 @@ def get_weather(city, api_key):
     location = get_city_coordinates(city, api_key)
 
     if not location:
-        return #complete the return statement to indicate that the city was not found
-
+        return "City not found"
     url = "https://api.openweathermap.org/data/4.0/weather"
     params = {
         "lat": lat,
