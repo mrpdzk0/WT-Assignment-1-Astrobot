@@ -12,10 +12,10 @@ This investigation sheet helps you gather key technical information from the thr
 | Criteria | Details |
 |---------|---------|
 | API Base URL | `https://webexapis.com/v1/messages` |
-| Authentication Method | `_______________________________` |
-| Endpoint to list rooms | `_______________________________` |
-| Endpoint to get messages | `api.uk.webexconnect.io` |
-| Endpoint to send message | `_______________________________` |
+| Authentication Method | `API Key` |
+| Endpoint to list rooms | `/rooms` |
+| Endpoint to get messages | `/messages` |
+| Endpoint to send message | `/messages` |
 | Required headers | `_______________________________` |
 | Sample full GET or POST request | `` |
 
@@ -49,11 +49,11 @@ This investigation sheet helps you gather key technical information from the thr
 |---------|---------|
 | Provider used (Choose one) |OpenWeatherMap - |
 | API Base URL | `https://openweathermap.org/` |
-| Endpoint for geocoding | `_______________________________` |
+| Endpoint for geocoding | `_____________________________zl__` |
 | Endpoint for reverse geocoding | `_______________________________` |
 | Authentication method | `appid={API key}` |
 | Required query parameters | `_______________________________` |
-| Sample request with latitude/longitude | `_______________________________` |
+| Sample request with latitude/longitude | `https://api.openweathermap.org/data/4.0/onecall/current?lat=52.2297&lon=21.0122&units=metric&lang=en&appid={API key} ` |
 | Sample JSON response (formatted example) |  
 {
   "lat": 51.5,
