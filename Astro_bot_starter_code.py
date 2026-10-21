@@ -127,8 +127,8 @@ def get_weather(city, api_key):
 
     url = "https://api.openweathermap.org/data/4.0/weather"
     params = {
-        "lat": location["lat"],
-        "lon": location["lon"],
+        "lat": lat,
+        "lon": lon,
         "units": "metric",
         "appid": api_key
     }
@@ -151,10 +151,15 @@ def get_weather(city, api_key):
 # ISS FUNCTIONS
 # =========================
 def reverse_geocode(lat, lon, api_key):
-    url = #complete the URL to fetch reverse geocoding data from OpenWeatherMap API
-    params = #complete the params dictionary to include the latitude, longitude, limit, and the API key
+    url = "https://api.openweathermap.org/geo/1.0/reverse"
+    params = {
+        "lat": lat,
+        "lon": lon,
+        "limit": 1,
+        "appid": api_key
+    }
 
-    response = requests.#complete(url, params=params)
+    response = requests.get(url, params=params)
 
     if response.status_code != 200:
         return None
