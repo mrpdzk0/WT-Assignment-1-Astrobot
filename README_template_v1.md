@@ -46,13 +46,13 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| Provider used (Choose one) |OpenWeatherMap - |
-| API Base URL | `https://openweathermap.org/` |
-| Endpoint for geocoding | `_____________________________zl__` |
-| Endpoint for reverse geocoding | `_______________________________` |
-| Authentication method | `appid={API key}` |
-| Required query parameters | `_______________________________` |
-| Sample request with latitude/longitude | `https://api.openweathermap.org/data/4.0/onecall/current?lat=52.2297&lon=21.0122&units=metric&lang=en&appid={API key} ` |
+| Provider used (Choose one) |OpenWeatherMap|
+| API Base URL | `https://api.openweathermap.org/` |
+| Endpoint for geocoding | `/geo/1.0/direct` |
+| Endpoint for reverse geocoding | `/geo/1.0/reverse` |
+| Authentication method | `appid=YOUR_API_KEY` |
+| Required query parameters | `q=London&limit=5&appid=YOUR_API_KEY` |
+| Sample request with latitude/longitude | `https://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=YOUR_API_KEY` |
 | Sample JSON response (formatted example) |  
 {
   "lat": 51.5,
@@ -73,11 +73,11 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| API Provider (Choose one) |OpenWeatherMap - |
-| API Base URL | `s://openweathermap.org/` |
-| Endpoint for current weather | `_______________________________` |
+| API Provider (Choose one) |OpenWeatherMap|
+| API Base URL | `https://api.openweathermap.org/` |
+| Endpoint for current weather | `/data/4.0/onecall/current` |
 | Authentication method | `appid={API key}` |
-| Required query parameters | `_______________________________` |
+| Required query parameters | `lat=52.2297&lon=21.0122&units=metric&lang=en&appid={API key}` |
 | Sample JSON response (formatted example) |  
 {
   "lat": 51.5,
