@@ -9,6 +9,21 @@
 # =========================
 
 import requests
+
+url = "https://webexapis.com/v1/rooms"
+
+payload = '''{}'''
+
+headers = {
+    "Authorization": "Bearer ",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+}
+
+response = requests.request('POST', url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
+
 import json
 import time
 from datetime import datetime
@@ -35,7 +50,7 @@ def get_api_key(prompt, hardcoded_key):
 # WEBEX FUNCTIONS
 # =========================
 def get_rooms(token):
-    url = #complete the URL to fetch rooms from Webex API
+    url = "https://webexapis.com/v1/rooms"
     headers = #complete the headers dictionary to include the Authorization header with the token
     response = #complete the request to get rooms using requests.get with the url and headers
 

@@ -11,13 +11,13 @@ This investigation sheet helps you gather key technical information from the thr
 
 | Criteria | Details |
 |---------|---------|
-| API Base URL | `_______________________________` |
+| API Base URL | `https://webexapis.com/v1/messages` |
 | Authentication Method | `_______________________________` |
 | Endpoint to list rooms | `_______________________________` |
-| Endpoint to get messages | `_______________________________` |
+| Endpoint to get messages | `api.uk.webexconnect.io` |
 | Endpoint to send message | `_______________________________` |
 | Required headers | `_______________________________` |
-| Sample full GET or POST request | `_______________________________` |
+| Sample full GET or POST request | `` |
 
 ---
 
