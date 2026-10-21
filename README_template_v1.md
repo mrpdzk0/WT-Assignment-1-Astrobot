@@ -27,8 +27,7 @@ This investigation sheet helps you gather key technical information from the thr
 |---------|---------|
 | API Base URL | `http://api.open-notify.org/iss-now.json` |
 | Endpoint for current ISS location | `{"timestamp": 1790251802, "iss_position": {"latitude": "-45.2251", "longitude": "-71.4836"}, "message": "success"}` |
-| Sample response format (example JSON) |
-
+| Sample response format (example JSON)
 '{
   "timestamp": 1790251802,
   "iss_position": {
@@ -36,7 +35,7 @@ This investigation sheet helps you gather key technical information from the thr
     "longitude": "-71.4836"
   },
   "message": "success"
-}'
+}' |
 
 ```
 |
