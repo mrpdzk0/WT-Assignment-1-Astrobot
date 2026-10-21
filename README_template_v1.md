@@ -127,12 +127,12 @@ This investigation sheet helps you gather key technical information from the thr
 | Criteria | Details |
 |---------|---------|
 | Library used | `time` |
-| Function used to convert epoch | `_______________________________` |
+| Function used to convert epoch | `time.gmtime()` |
 | Sample code to convert timestamp |  
 
 'import time
 
-epoch_time = 1613474400  # Replace with your epoch time
+epoch_time = 1613474400
 
 formatted_time = time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(epoch_time))
 print(formatted_time)'
