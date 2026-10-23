@@ -75,7 +75,7 @@ This investigation sheet helps you gather key technical information from the thr
 |---------|---------|
 | API Provider (Choose one) |OpenWeatherMap|
 | API Base URL | `https://api.openweathermap.org/` |
-| Endpoint for current weather | `/data/4.0/onecall/current` |
+| Endpoint for current weather | `/data/2.5/weather` |
 | Authentication method | `appid={API key}` |
 | Required query parameters | `lat=52.2297&lon=21.0122&units=metric&lang=en&appid={API key}` |
 | Sample JSON response (formatted example) |  
