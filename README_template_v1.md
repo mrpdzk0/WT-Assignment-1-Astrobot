@@ -149,9 +149,9 @@ print(formatted_time)'
 | Criteria | Details |
 |---------|---------|
 | API Provider | 'Weather API Astronomy' |
-| API Base URL | `https://www.weatherapi.com/` |
-| Endpoint | `_______________________________` |
-| Authentication method | `_______________________________` |
+| API Base URL | `https://www.weatherapi.com/v1` |
+| Endpoint | `/astronomy.json` |
+| Authentication method | `key=YOUR_API_KEY` |
 | Required query parameters | `_______________________________` |
 | Sample JSON response (formatted example) |  
 ```

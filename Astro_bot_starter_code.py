@@ -110,7 +110,7 @@ def send_message(token, room_id, message): # This function sends a message to th
 # =========================
 # WEATHER FUNCTIONS
 # =========================
-def get_city_coordinates(city, api_key): # This function is 
+def get_city_coordinates(city, api_key): # This function is used to get coordinates of a city.
     url = "https://api.openweathermap.org/geo/1.0/direct"
     params = {
         "q": city,
@@ -126,7 +126,7 @@ def get_city_coordinates(city, api_key): # This function is
     return data[0] if data else None
 
 
-def get_weather(city, api_key):
+def get_weather(city, api_key): # This function is used to get the weather of a city using the coordinates.
     location = get_city_coordinates(city, api_key)
 
     if not location:
@@ -156,7 +156,7 @@ def get_weather(city, api_key):
 # =========================
 # ISS FUNCTIONS
 # =========================
-def reverse_geocode(lat, lon, api_key):
+def reverse_geocode(lat, lon, api_key): # This function gets the city name
     url = "https://api.openweathermap.org/geo/1.0/reverse"
     params = {
         "lat": lat,
@@ -174,7 +174,7 @@ def reverse_geocode(lat, lon, api_key):
     return data[0] if data else None
 
 
-def get_iss_location(api_key):
+def get_iss_location(api_key): # This function gets the current ISS location and the city it is over
     url = "http://api.open-notify.org/iss-now.json"
 
     response = requests.get(url)
@@ -200,7 +200,7 @@ def get_iss_location(api_key):
         f"Place: {place}"
     )
     
-def get_astronomy(city, api_key):
+def get_astronomy(city, api_key): # This function gets astronomy data such as sunrise, sunet and moon phase for a location
     url = "https://api.weatherapi.com/v1/astronomy.json"
     params = {
         "q": city,
@@ -225,13 +225,18 @@ def get_astronomy(city, api_key):
 # =========================
 # MAIN BOT LOGIC
 # =========================
-def main():
+def main(): # This function asks the user for their API keys.
 
     token = get_webex_token()
 
     weather_key = get_api_key(
         "Use hard-coded weather key? (y/n): ",
         "YOUR_OPENWEATHER_API_KEY"
+    )
+    
+    astronomy_key = get_api_key(
+        "Use hard-coded Astronomy API key? (y/n): ",
+        "YOUR_WEATHERAPI_KEY"
     )
 
     rooms = get_rooms(token)
@@ -262,7 +267,7 @@ def main():
                 send_message(
                     token,
                     room_id,
-                    "/weather <city>\n/iss\n/help\n/quit"
+                    "/weather <city>\n/astronomy <city>\n/iss\n/help\n/quit"
                 )
 
             elif message_text.lower().startswith("/weather"):
@@ -274,6 +279,16 @@ def main():
                 else:
                     city = parts[1]
                     send_message(token, room_id, get_weather(city, weather_key))
+                    
+            elif message_text.lower().startswith("/astronomy"):
+            
+                            parts = message_text.split(maxsplit=1)
+            
+                            if len(parts) < 2:
+                                send_message(token, room_id, "Usage: /astronomy <city>")
+                            else:
+                                city = parts[1]
+                                send_message(token, room_id, get_astronomy(city, astronomy_key))
 
             elif message_text.lower() == "/iss":
                 send_message(token, room_id, get_iss_location(weather_key))
