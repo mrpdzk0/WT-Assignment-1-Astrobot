@@ -8,7 +8,7 @@
 # REQUIRED LIBRARIES
 # =========================
 
-import requests
+import requests # requests module is used to send HTTP requests to external APIs. In this case it is webex and openweathermap.
 
 url = "https://webexapis.com/v1/rooms"
 
@@ -31,7 +31,7 @@ from datetime import datetime
 # =========================
 # CONFIGURATION FUNCTIONS
 # =========================
-def get_webex_token():
+def get_webex_token(): # This function asks the user if they want to use a hard-coded webex token or input their own.
     choice = input("Use hard-coded Webex token? (y/n): ").lower()
     if choice == "n":
         token = input("Enter your Webex Access Token: ")
@@ -49,7 +49,7 @@ def get_api_key(prompt, hardcoded_key):
 # =========================
 # WEBEX FUNCTIONS
 # =========================
-def get_rooms(token):
+def get_rooms(token): # This function lists the available rooms to the user if their webex API key is valid.
     url = "https://webexapis.com/v1/rooms"
     headers = {"Authorization": token}
     response = requests.get(url, headers=headers)
@@ -61,12 +61,12 @@ def get_rooms(token):
     return response.json().get("items", [])
 
 
-def print_rooms(rooms):
+def print_rooms(rooms): # This functions prints the rooms for the user
     for room in rooms:
         print(f"Room: {room['title']}, ID: {room['id']}")
 
 
-def select_room(rooms):
+def select_room(rooms): # Prompts the user to select a room that is available to them and lists it with their API keys.
     while True:
         name = input("Please enter the room name: ")
         for room in rooms:
@@ -76,7 +76,7 @@ def select_room(rooms):
         print("Room was not found. Please enter another room name. ")
 
 
-def get_latest_message(token, room_id):
+def get_latest_message(token, room_id): # This function updates every 5 seconds to check for new messages. In this case it would be the commands such as /iss /weather etc
     url = "https://webexapis.com/v1/messages"
     params = {"roomId": room_id, "max": 1}
     headers = {"Authorization": token}
@@ -95,7 +95,7 @@ def get_latest_message(token, room_id):
     return latest.get("id"), latest.get("text", "")
 
 
-def send_message(token, room_id, message):
+def send_message(token, room_id, message): # This function sends a message to the selected room when a command or a sentence is written.
     url = "https://webexapis.com/v1/messages"
     headers = {
         "Authorization": token,
@@ -110,7 +110,7 @@ def send_message(token, room_id, message):
 # =========================
 # WEATHER FUNCTIONS
 # =========================
-def get_city_coordinates(city, api_key):
+def get_city_coordinates(city, api_key): # This function is 
     url = "https://api.openweathermap.org/geo/1.0/direct"
     params = {
         "q": city,
@@ -199,6 +199,28 @@ def get_iss_location(api_key):
         f"Latitude: {lat}, Longitude: {lon}\n"
         f"Place: {place}"
     )
+    
+def get_astronomy(city, api_key):
+    url = "https://api.weatherapi.com/v1/astronomy.json"
+    params = {
+        "q": city,
+        "key": api_key
+    }
+    response = requests.get(url, params=params)
+
+    if response.status_code != 200:
+        return "Error retrieving astronomy data."
+
+    data = response.json()
+    astro = data["astronomy"]["astro"]
+    location = data["location"]
+
+    return (
+        f"Astronomy for {location['name']}, {location['country']}:\n"
+        f"Sunrise: {astro['sunrise']}\n"
+        f"Sunset: {astro['sunset']}\n"
+        f"Moon Phase: {astro['moon_phase']}"
+    )   
 
 # =========================
 # MAIN BOT LOGIC
@@ -208,7 +230,7 @@ def main():
     token = get_webex_token()
 
     weather_key = get_api_key(
-        "Weather API key",
+        "Use hard-coded weather key? (y/n): ",
         "YOUR_OPENWEATHER_API_KEY"
     )
 

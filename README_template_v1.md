@@ -148,8 +148,8 @@ print(formatted_time)'
 
 | Criteria | Details |
 |---------|---------|
-| API Provider | '_________' |
-| API Base URL | `_______________________________` |
+| API Provider | 'Weather API Astronomy' |
+| API Base URL | `https://www.weatherapi.com/` |
 | Endpoint | `_______________________________` |
 | Authentication method | `_______________________________` |
 | Required query parameters | `_______________________________` |
