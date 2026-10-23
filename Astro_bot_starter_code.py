@@ -51,10 +51,10 @@ def get_api_key(prompt, hardcoded_key):
 # =========================
 def get_rooms(token):
     url = "https://webexapis.com/v1/rooms"
-    headers = #complete the headers dictionary to include the Authorization header with the token
-    response = #complete the request to get rooms using requests.get with the url and headers
+    headers = {"Authorization": token}
+    response = requests.get(url, headers=headers)
 
-    if response.status_code != #complete the condition to check if the response status code is not xxx:
+    if response.status_code != 200:
         print("Error fetching rooms:", response.status_code)
         return []
 
@@ -63,17 +63,17 @@ def get_rooms(token):
 
 def print_rooms(rooms):
     for room in rooms:
-        print(#complete the print statement to display the room title and id)
+        print(f"Room: {room['title']}, ID: {room['id']}")
 
 
 def select_room(rooms):
     while True:
-        name = input(#complete the input prompt to ask the user for the room name)
+        name = input("Please enter the room name: ")
         for room in rooms:
             if name.lower() in room["title"].lower():
-                print(#complete the print statement to confirm the selected room)
+                print(f"Selected room is {room['title']} with ID: {room['id']}")
                 return room["id"]
-        print(#complete the print statement to indicate that the room was not found)
+        print("Room was not found. Please enter another room name. ")
 
 
 def get_latest_message(token, room_id):
