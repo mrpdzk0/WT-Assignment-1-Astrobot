@@ -152,7 +152,7 @@ print(formatted_time)'
 | API Base URL | `https://www.weatherapi.com/v1` |
 | Endpoint | `/astronomy.json` |
 | Authentication method | `key=YOUR_API_KEY` |
-| Required query parameters | `_______________________________` |
+| Required query parameters | `key=YOUR_API_KEY` |
 | Sample JSON response (formatted example) |  
 ```
 
